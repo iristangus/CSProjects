@@ -1,0 +1,16 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>My first website</title>
+{% endblock %}
+
+{% block body %}
+<p>Here's a paragraph!</p>
+
+{% for word in list %}
+    <p>{{word}}</p>
+{% endfor %}
+
+<a href="factorial">Link to factorial page!</a>
+
+{% endblock %}

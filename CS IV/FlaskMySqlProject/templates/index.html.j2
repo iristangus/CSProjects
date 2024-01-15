@@ -1,0 +1,45 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>MySQL</title>
+{% endblock %}
+
+{% block body %}
+<!--
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                <th>{{row['name']}}</th>
+                <th>{{row['age']}}</th>
+            </tr>
+        {% endfor %}
+    </table>
+    -->
+
+    <!--
+    {% for row in rows %}
+        <p>{{row['name']}} was born on {{row['birthday'].month}}</p>
+
+    {% endfor %}
+    -->
+
+<!--
+    <form method="POST" action="results">
+        Search for a name in the database!
+        <input type="text" name="name" />
+        <input type="submit" value="Submit!" />
+    </form>
+    -->
+
+    <form method="POST" action="results">
+        <p>Insert a new user!</p>
+        <input type="text" name="name" />
+        <input type="date" name="bday" />
+        <input type="submit" value="Submit!" />
+    </form>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>Account</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row align-items-center align-self-center">
+
+        <div class="col-sm-3 accountCol">
+            <h3 class="centerText">Log in</h3>
+            <br>
+
+            <form method="POST" action=".">
+                <div>
+                    <label for="loginUsername" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="loginUsername" name="loginUsername" required/>
+                </div>
+                <div>
+                    <label for="loginPassword" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="loginPassword" name="loginPassword" required/>
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-primary center" name="submitButton" value="login">Submit</button>
+                </div>
+            </form>
+
+            {% if loginError|length > 0 %}
+                {{loginError}}
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3 accountCol">
+            <h3 class="centerText">New Account</h3>
+            <br>
+
+            <form method="POST" action=".">
+                <div>
+                    <label for="newUsername" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="newUsername" name="newUsername" required/>
+                </div>
+                <div>
+                    <label for="newPassword" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" required/>
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-primary center" name="submitButton" value="newAccount">Create Account</button>
+                </div>
+            </form>
+
+            {% if newError|length > 0 %}
+                {{newError}}
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-3 accountCol">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <form method="POST" action=".">
+                <button type="submit" class="btn btn-primary" name="submitButton" value="guest">Continue as Guest</button>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

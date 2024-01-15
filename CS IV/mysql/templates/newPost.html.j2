@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>New Post</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row header justify-content-center">
+        <div class="col-sm-9">
+            <h3>New Post</h3>
+        </div>
+        <div class="col-sm-2">
+            <h5>{{username}}</h5>
+        </div>
+    </div>
+
+    <div class="main row justify-content-center">
+        <form method="POST" action=".">
+            <textarea class="form-control" id="textPost" name="textPost" required></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary center" name="submitButton" value="newPost">Post!</button>
+        </form>
+    </div>
+
+    {% if postError|length > 0 %}
+        {{postError}}
+    {% endif %}
+
+{% endblock %}

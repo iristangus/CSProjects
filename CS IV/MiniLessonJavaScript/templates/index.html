@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+		<h1>Playing with Javascript</h1>
+		
+		<button onclick="alertHello();">Click this button to print "Hello world" to an alert</button>
+		
+		<button onclick="alertFromTextbox();">Click this button to print what you type below to an alert</button>
+		<input id="user-input" type="text" />
+		
+		<button onclick="changeText();">Click this button to change the following text</button>
+		<p id="text-to-change">This text will become blue and different!</p>
+		
+		<button onclick="makeDisappear();">Click this button to make the following text disappear</button>
+		<p id="text-to-disappear">This text will disappear</p>
+		
+		<button onclick="makeAppear();">Wait, bring that text back please</button>
+		
+		<button onclick="addButton();">Click this button to add more buttons below</button>
+		
+{% endblock body %}

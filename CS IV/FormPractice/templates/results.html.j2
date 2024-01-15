@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>My first website</title>
+{% endblock %}
+
+{% block body %}
+
+{% if name|length > 0 %}
+    Hello, {{name}}!
+{% else %}
+    Oops, no name!
+{% endif %}
+<br/> <br/>
+
+
+
+{% if radio is not none %}
+    Radio Buttons: <br/>
+    {{radio}}
+{% else %}
+    Please choose a button!
+{% endif %}
+<br />
+
+Checkboxes: <br/>
+{{checkbox}}
+
+<br/>
+<a href="http://127.0.0.1:5000/">Return to the form</a>
+
+{% endblock %}

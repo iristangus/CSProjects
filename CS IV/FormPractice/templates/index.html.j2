@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>My first website</title>
+{% endblock %}
+
+{% block body %}
+
+<!-- IN-CLASS
+<form method="POST" action="results">
+    <label> Favorite Color: </label>
+    <input type="text" name="favoriteColor" required/>
+    <br/>
+    <input type="submit"/>
+</form>
+-->
+
+<form method="POST" action=".">
+    Full name: <br/>
+    <input type="text" name="fullname" required/> <br/>
+    Do you like sushi? <br/>
+    <input type="radio" name="sushi" value="yes" required/> Yes
+    <input type="radio" name="sushi" value="no" required/> No <br/>
+    Do you have a bike or a car? <br/>
+    <input type="checkbox" name="vehicle" value="bike" /> Bike
+    <input type="checkbox" name="vehicle" value="car" /> Car
+    <br/>
+    <input type="submit" value="Submit!" />
+</form>
+
+
+{% endblock %}

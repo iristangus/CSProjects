@@ -1,0 +1,41 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>The Board</title>
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action="." >
+        <div class="row header justify-content-center">
+
+            <div class="col-sm-8">
+                <h3>the board</h3>
+            </div>
+
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-primary" name="submitButton" value="redirectAccount">{{username}}</button>
+            </div>
+
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary" name="submitButton" value="redirectNewPost">Make a new Post</button>
+            </div>
+
+        </div>  
+    </form>
+
+    <div class="main">
+    <ul class="flex-container wrap">
+    {% for post in posts %}
+
+        <li class="flex-item">
+            <p>{{post['content']}}</p>
+            <p class="poster">{{post['username']}}</p>
+        </li>
+        
+    {% endfor %}
+    </ul>
+    </div>
+
+
+{% endblock %}

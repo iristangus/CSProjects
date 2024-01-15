@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Play 24</title>
+{% endblock %}
+
+{% block body %}
+    <form method="POST" action=".">
+
+        <div class="row header">
+
+            <div class="col">
+                <button type="submit" class="btn btn-outline-light center add-margin" name="submitButton" value="goToLogin" >LOG IN</button>
+            </div>
+
+            <div class="col right-align">
+                <button type="submit" class="btn btn-outline-light center add-margin" name="submitButton" value="goToSignup" >SIGN UP</button>
+            </div>
+
+        </div>
+
+        <img src="static/24.jpg" class="centered add-margin-top" alt="24" width="300">
+
+         <div class="card border-dark centered add-margin w-75">
+            <div class="card-body add-margin">
+                <h5 class="card-title center-text">HOW TO PLAY</h5>
+                <p class="card-text">Given four random integers from 1-9, use the four basic operations (+, -, *, /) to make them equal to 24!</p>
+            </div>
+        </div>
+        
+    </form>
+{% endblock %}

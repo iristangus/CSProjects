@@ -1,0 +1,31 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Results</title>
+{% endblock %}
+
+{% block body %}
+    <form method="POST" action=".">
+
+        <div class="header">
+            <h3 class="header-text center-text">Results</h3>
+        </div>
+
+        <div class="card border-dark centered add-big-margin-top w-50">
+            <div class="card-body center-vertical">
+                <p>seconds: {{seconds}}</p>
+                <p>minutes: {{minutes}}</p>
+            </div>
+            
+        </div>
+
+        <div class="footer">
+            <a href="." class="btn btn-outline-light add-margin" name="submitButton" value="home">Back</button>
+        </div>
+
+        <input type="hidden" id="timerStart" name="timerStart" value="{{timerStart}}">
+        
+    </form>
+
+
+{% endblock %}

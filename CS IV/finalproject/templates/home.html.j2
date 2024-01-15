@@ -1,0 +1,77 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Play!</title>
+{% endblock %}
+
+{% block body %}
+    
+    <form method="POST" action=".">
+
+        <div class="row header">
+
+            <div class="col">
+                <button type="submit" class="btn btn-outline-light add-margin" name="submitButton" value="leaderboard">LEADERBOARD</button>
+            </div>
+
+            <div class="col centered header-text add-margin">
+                <h5>{{username}}</h5>
+            </div>
+
+            <div class="col right-align">
+                <button type="button" class="btn btn-outline-light add-margin" id="instructionsBtn">HOW TO PLAY</button>
+            </div>
+
+        </div>
+
+        <div id="instructionsModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h5 class="center-text">HOW TO PLAY</h5>
+                <hr>
+                <p class="center-text">Given four random integers from 1-9, use the four basic operations (+, -, *, /) to make them equal to 24!</p>
+            </div>
+
+        </div>
+
+
+        <img src="static/24.jpg" class="centered add-margin-top" alt="24" width="220">
+
+
+        <div class="row centered">
+
+            <div class="card border-dark col-4 add-margin w-25">
+
+                <div class="card-body">
+                    <h5 class="card-title center-text">FREEPLAY</h5>
+                    <p class="card-text center-text">Unlimited games!</p>
+                    <button type="submit" class="btn btn-dark centered" name="submitButton" value="freeplay" >PLAY</button>
+                </div>
+
+            </div>
+
+
+            <div class="col-2">
+            </div>
+
+
+            <div class="card border-dark col-4 add-margin w-25">
+
+                <div class="card-body">
+                    <h5 class="card-title center-text">TIMED</h5>
+                    <p class="card-text center-text">How long will it take you to solve five games in a row? Compete with others on the leaderboard!</p>
+                    <button type="submit" onclick="startTimer();" class="btn btn-dark centered" name="submitButton" value="timed" >PLAY</button>
+                </div>
+
+            </div>
+        
+        </div>
+
+        <div class="footer">
+            <button type="submit" class="btn btn-outline-light add-margin" name="submitButton" value="logout" >SIGN OUT</button>
+            <input type="hidden" id="timerStart" name="timerStart" value="">
+        </div>
+
+    </form>
+{% endblock %}

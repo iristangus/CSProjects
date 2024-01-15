@@ -1,0 +1,53 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <!--Form will be sent back to the index function in app.py for mysql logic-->
+    <form method="POST" action=".">
+
+        <div class="header">
+            <h3 class="header-text center-text">LOG IN</h3>
+        </div>
+
+        <br>
+
+        <div class="card border-dark centered add-big-margin-top w-50">
+            <div class="card-body center-vertical">
+                <div>
+                    <label for="loginUsername" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="loginUsername" name="loginUsername" required/>
+                </div>
+                <br>
+                <div>
+                    <label for="loginPassword" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="loginPassword" name="loginPassword" required/>
+                </div>
+                <br>
+                <div class="centered">
+                    <button type="submit" class="btn btn-dark center" name="submitButton" value="login">Submit</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="footer">
+            <a href="." class="btn btn-outline-light add-margin" >Back</a>
+        </div>
+
+        <br>
+        
+        <!--Displays the login error (if there is one)-->
+        <div class="centered add-margin">
+            {% if loginError|length > 0 %}
+                <p class="center-text">{{loginError}}</p>
+            {% endif %}
+        </div>
+
+    </form>
+
+    
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Timed</title>
+{% endblock %}
+
+{% block body %}
+
+    <form name="formName" method="POST" action=".">
+
+        <div class="header row">
+
+            <div class="col">
+                <h3 class="header-text">TIMED</h3>
+            </div>
+
+            <div class="col">
+                <p class="header-text centered" id="timer"></p>
+            </div>
+            
+            <div class="col right-align">
+                <button type="submit" class="btn btn-outline-light add-margin" name="submitButton" value="home" >BACK TO HOME</button>
+            </div>
+            
+        </div>
+
+        <div class="container add-margin-top">
+
+            <div class="row add-margin">
+
+                <div class="col">
+                    <button onclick="clickNumber(this);" type="button" id="num1" class="btn btn-outline-dark btn-lg number">{{numArray[0]}}</button>
+                </div>
+
+                <div class="col">
+                    <button onclick="clickNumber(this);" type="button" id="num2" class="btn btn-outline-dark btn-lg number">{{numArray[1]}}</button>
+                </div>
+                
+                <div class="col">
+                    <button onclick="clickNumber(this);" type="button" id="num3" class="btn btn-outline-dark btn-lg number">{{numArray[2]}}</button>
+                </div>
+
+                <div class="col">
+                    <button onclick="clickNumber(this);" type="button" id="num4" class="btn btn-outline-dark btn-lg number">{{numArray[3]}}</button>
+                </div>
+                
+            </div>
+
+            <br>
+
+            <div class="row add-margin">
+
+                <div class="col">
+                    <button onclick="clickOperator('+', this);" type="button" id="op1" class="btn btn-outline-dark btn-lg operator disabled">+</button>
+                </div>
+
+                <div class="col">
+                    <button onclick="clickOperator('-', this);" type="button" id="op2" class="btn btn-outline-dark btn-lg operator disabled">-</button>
+                </div>
+                
+                <div class="col">
+                    <button onclick="clickOperator('*', this);" type="button" id="op3" class="btn btn-outline-dark btn-lg operator disabled">*</button>
+                </div>
+
+                <div class="col">
+                    <button onclick="clickOperator('/', this);" type="button" id="op4" class="btn btn-outline-dark btn-lg operator disabled">/</button>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <div class="footer row">
+
+            <div class="col add-margin">
+                <button type="submit" class="btn btn-outline-light" name="submitButton" value="timedReset" >RESET</button>
+            </div>
+
+            <div class="col">
+                <p class="header-text center-text" id="streak">STREAK: {{numStreak}}</p>
+            </div>
+            
+            <div class="col add-margin right-align">
+                <button type="submit" onclick="next();" class="btn btn-outline-light disabled" name="submitButton" value="timedNext" id="next">NEXT</button>
+            </div>
+
+        </div>
+
+        <div id="resultModal" class="modal">
+
+            <div class="modal-content">
+                <p class="center-text">You completed five games in:</p>
+                <p class="center-text"><span id="minutes"></span>m <span id="seconds"></span>s</p>
+                <button type="submit" onclick="close();" class="btn btn-dark" name="submitButton" value="resultsToLeaderboard">GO TO LEADERBOARD</button>
+            </div>
+
+        </div>
+
+        <input type="hidden" id="numArray" name="numArray" value="{{numArray}}">
+        <input type="hidden" id="numStreak" name="numStreak" value="{{numStreak}}">
+        <input type="hidden" id="timerStart" name="timerStart" value="{{timerStart}}">
+        <input type="hidden" id="totaltime" name="totalTime" value="">
+        <input type="hidden" id="minutesHidden" name="minutesHidden" value="">
+        <input type="hidden" id="secondsHidden" name="secondsHidden" value="">
+        
+    </form>
+
+    
+{% endblock %}

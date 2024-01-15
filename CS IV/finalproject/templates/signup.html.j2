@@ -1,0 +1,51 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Signup</title>
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action=".">
+
+        <div class="header">
+            <h3 class="header-text center-text">SIGN UP</h3>
+        </div>
+
+        <br>
+
+        <div class="card border-dark centered add-margin w-50">
+            <div class="card-body center-vertical">
+                <div>
+                    <label for="newUsername" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="newUsername" name="newUsername" required/>
+                </div>
+                <br>
+                <div>
+                    <label for="newPassword" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" required/>
+                </div>
+                <br>
+                <div class="centered">
+                    <button type="submit" class="btn btn-dark center" name="submitButton" value="signup">Create Account</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="footer">
+            <a href="." class="btn btn-outline-light add-margin" >Back</a>
+        </div>
+
+        <br>
+
+    </form>
+
+    <!--displays the signup error (if there is one)-->
+    <div class="centered add-margin">
+        {% if newError|length > 0 %}
+            <p class="center-text">{{newError}}</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
