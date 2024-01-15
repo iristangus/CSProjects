@@ -1,0 +1,40 @@
+body{
+    background-image: url("graph.jpg");
+    background-attachment:fixed;
+    width:600px;
+    margin:auto;
+    border-left:1px solid #000000;
+    border-right:1px solid #000000;
+    padding:10px;
+    font-family:arial;
+}
+
+h1{
+    font-family:Verdana;
+    color:#660099;
+}
+
+h3{
+    text-align:center;
+}
+
+#title-and-author{
+    letter-spacing:5px;
+    font-family: "Trebuchet MS";
+    color:#660099;
+    font-size:smaller;
+}
+
+#large{
+    font-size:20pt;
+}
+
+.purp{
+    color:#660099;
+}
+
+.lined{
+    text-decoration:underline;
+}
+
+

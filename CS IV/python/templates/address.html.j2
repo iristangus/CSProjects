@@ -1,0 +1,49 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>Enter your address</title>
+{% endblock %}
+
+{% block body %}
+
+    <h3>Enter your address:</h3>
+
+    <form method="POST" action="order">
+        <div>
+            <label for="addressLine1" class="form-label">Address:</label>
+            <input type="text" class="form-control" name="addressLine1" id="addressLine1" aria-describedby="addressEx" required>
+            <div id="addressEx" class="form-text">e.x 1234 NW Bobcat Lane</div>
+        </div>
+        <br>
+        <div>
+            <label for="apartment" class="form-label">Apartment/Suite</label>
+            <input type="text" class="form-control" name="apartment" id="apartment" aria-describedby="apartmentEx">
+            <div id="apartmentEx" class="form-text">e.x. Ap #367</div>
+        </div>
+        <br>
+        <div>
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" name="city" id="city" required>
+        </div>
+        <br>
+        <div>
+            <label for="state" class="form-label">Select a state:</label>
+            <select class="form-select" name="state" id="state" size="3" aria-describedby="stateNote" required>
+                <option value="Washington">Washington</option>
+                <option value="Oregon">Oregon</option>
+                <option value="California">California</option>
+            </select>
+            <div id="stateNote" class="form-text">Note: We only ship to WA, OR, and CA</div>
+        </div>
+        <br>
+        <div>
+            <label for="zip" class="form-label">Zip Code</label>
+            <input type="text" class="form-control" name="zip" id="zip" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="hidden" id="yourName" name="yourName" value="{{customerName}}">
+        <input type="hidden" id="isDelivery" name="isDelivery" value={{isDelivery}}>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+    <title>Place an order!</title>
+{% endblock %}
+
+{% block body %}
+    <h3 class="centerText">Cafe Order Form</h3>
+    <hr>
+    <form method="POST" action="delivery">
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <label for="name" class="form-label">Enter your name:</label>
+                <input type="text" class="form-control" name="yourName" id="name" required>
+            </div>
+        </div>
+        
+        <br>
+        <div class="row justify-content-center">
+            <!--from https://stackoverflow.com/questions/35163164/how-to-center-content-in-a-bootstrap-column-->
+            <div class="col-sm-3 d-flex justify-content-center">
+                <input class="form-check-input" type="radio" name="deliveryOptions" value="delivery" id="delivery" required>
+                <label class="form-check-label" for="delivery"> Deliver to an address</label>
+            </div>
+            <div class="col-sm-3 d-flex justify-content-center">
+                <input class="form-check-input" type="radio" name="deliveryOptions" value="pickup" id="pickup" required>
+                <label class="form-check-label" for="pickup"> Pickup at our location</label>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary center">Submit</button>
+    </form>
+
+{% endblock %}

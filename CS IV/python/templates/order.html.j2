@@ -1,0 +1,63 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>Order</title>
+{% endblock %}
+
+{% block body %}
+
+    <h3 class="centerText">Order</h3>
+    <hr>
+
+    <form method="POST" action="receipt">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <p class="centerText">Latte</p>
+                <img src="static/latte.jpg" alt="latte" class="menuItem">
+                <br>
+                <label for="latte" class="form-label">Amount:</label>
+                <!--range amount code from https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
+                <input type="range" name="latteRange" class="form-range" id="latte" min="0" max="10" value="0" oninput="this.form.latteInput.value=this.value">
+                <input type="number" name="latteInput" min="0" max="10" value="0" oninput="this.form.latteRange.value=this.value">
+            </div>
+            <div class="col-sm-4">
+                <p class="centerText">Breakfast Sandwich</p>
+                <img src="static/breakfastsandwich.jpg" alt="breakfastsandwich" class="menuItem">
+                <br>
+                <label for="breakfastsandwich" class="form-label">Amount:</label>
+                <!--range amount code from https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
+                <input type="range" name="breakfastSandwichRange" class="form-range" id="breakfastsandwich" min="0" max="10" value="0" oninput="this.form.breakfastSandwichInput.value=this.value">
+                <input type="number" name="breakfastSandwichInput" min="0" max="10" value="0" oninput="this.form.breakfastSandwichRange.value=this.value">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <p class="centerText">Macarons</p>
+                <img src="static/macaron.jpg" alt="macarons" class="menuItem">
+                <br>
+                <label for="macarons" class="form-label">Amount:</label>
+                <!--range amount code from https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
+                <input type="range" name="macaronRange" class="form-range" id="macarons" min="0" max="10" value="0" oninput="this.form.macaronInput.value=this.value">
+                <input type="number" name="macaronInput" min="0" max="10" value="0" oninput="this.form.macaronRange.value=this.value">
+            </div>
+            <div class="col-sm-4">
+                <p class="centerText">Crepe Cake Slice</p>
+                <img src="static/crepecake.jpg" alt="crepecake" class="menuItem">
+                <br>
+                <label for="crepecake" class="form-label">Amount:</label>
+                <!--range amount code from https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
+                <input type="range" name="crepeCakeRange" class="form-range" id="crepecake" min="0" max="10" value="0" oninput="this.form.crepeCakeInput.value=this.value">
+                <input type="number" name="crepeCakeInput" min="0" max="10" value="0" oninput="this.form.crepeCakeRange.value=this.value">
+            </div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary center">Finish Order</button>
+        <input type="hidden" id="yourName" name="yourName" value="{{customerName}}">
+        <input type="hidden" id="delivery" name="delivery" value="{{delivery}}">
+        <input type="hidden" id="isDelivery" name="isDelivery" value="{{isDelivery}}">
+    </form>
+
+{% endblock %}

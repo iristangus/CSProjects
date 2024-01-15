@@ -1,0 +1,14 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>My first website</title>
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action="/results">
+        <input type="text" name="firstname" required>
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Aesthetic Color Selector
+        </title>
+        <style>
+            body {
+                   background-image: linear-gradient(
+                    90deg,
+                    {{color1}} 20%,
+                    {{color2}} 20%, {{color2}} 40%,
+                    {{color3}} 40%, {{color3}} 60%,
+                    {{color4}} 60%, {{color4}} 80%,
+                    {{color5}} 80%
+                   );
+                    
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="static/style.css" />
+    </head>
+    <body>
+        <span id="left"><p id="primary">Primary</p></span>
+        <span id="center"><p id="secondary">Secondary</p></span>
+        <span id="right"><p id="accent">Accent</p></span>
+    </body>
+</html>

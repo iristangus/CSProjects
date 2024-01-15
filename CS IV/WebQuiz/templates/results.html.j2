@@ -1,0 +1,18 @@
+{% extends "base.html.j2" %}
+
+{% block title %}
+<title>My first website</title>
+{% endblock %}
+
+{% block body %}
+
+{% if name|length == 0 or emailAddress|length == 0 %}
+    Blank input!
+{% elif emailAddress|length < 5 %}
+    Invalid email!
+{% else %}
+    <p>{{name}}</p>
+    <p>{{emailAddress}}</p>
+{% endif %}
+
+{% endblock %}
