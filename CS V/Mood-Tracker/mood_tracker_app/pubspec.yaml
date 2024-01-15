@@ -1,0 +1,33 @@
+name: mood_tracker_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_heatmap_calendar: ^1.0.5
+  syncfusion_flutter_charts: ^21.2.8
+  settings_ui: ^2.0.2
+  firebase_core: ^2.13.0
+  cloud_firestore: ^4.7.1
+  firebase_storage: ^11.2.1
+  firebase_remote_config: ^4.2.1
+  firebase_auth: ^4.6.1
+  persistent_bottom_nav_bar: any
+  group_button: ^5.2.2
+  fl_chart: ^0.62.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
