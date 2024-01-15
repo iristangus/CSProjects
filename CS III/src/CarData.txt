@@ -1,0 +1,7 @@
+0 Ford Mustang 1969 21000
+1 Nissan Titan 2022 15000
+2 Nissan Maxima 2022 43525
+3 Nissan Leaf 2022 28375
+4 Nissan Altima 2022 28375
+5 Nissan Versa 2022 16105
+6 Nissan Pathfinder 2022 48090
